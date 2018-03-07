@@ -96,13 +96,6 @@ extern OBJECT objs[];
      details     "The room glimmers with jewels and fine tapestries of red and violet. Sitting on a gold throne is a goblin wearing a crown and draped in ornate robes. It holds the Goblin Goblet in its hands in front of you.\n"
      capacity    9999
 
-- coin
-     description "a gold coin"
-     tags        "gold", "coin", "gold coin"
-     location    objectFountain
-     details     "The shiny coin glimmers with a distinct glint.\n"
-     weight      1
-
 - goblinTraderNoCoin
      condition   { return coin->location == objectFountain || coin->location == player; }
      description "Bub the Trader of Shinies"
@@ -189,6 +182,62 @@ extern OBJECT objs[];
      contents    "He has"
      health      100
      capacity    20
+
+- coin
+     description "a gold coin"
+     tags        "gold", "coin", "gold coin"
+     location    objectFountain
+     details     "The shiny coin glimmers with a distinct glint.\n"
+     weight      1
+
+- polishedKey
+     description "a polished key"
+     tags        "key", "polished key"
+     location    goblinTrader
+     details     "The key is polished and has a dull glint.\n"
+     weight      1
+
+- club
+     description "a table leg"
+     tags        "club", "leg", "table leg"
+     location    brawler
+     details     "The table leg looks like it would make a strudy club.\n"
+     weight      1
+
+- blueKey
+     description "a blue key"
+     tags        "key", "blue key"
+     location    key
+     details     "The key is a strange blue color.\n"
+     weight      1
+
+- objectFountain
+     description "a fountain"
+     tags        "fountain", "goblin fountain"
+     location    fountain
+     details     "The water is clear and pristine, the bottom of the fountain is a gravel pattern. At the bottom of the fountain you see something glimmer. It’s a gold coin! It twinkles as the water moves about the surface, refracting the light over it.\n"
+     weight      9999
+
+- mat
+     description "a colorful mat"
+     tags        "mat", "rug", "colorful mat"
+     location    trader
+     details     "Spread across the mat in careful tidy rows are various objects, such as smoothed glass, bent silverware, and a single polished key. The goblin guards over the objects closely, preventing them from being taken.\n"
+     weight       9999
+
+- debri
+     description "a lot of junk"
+     tags        "debri", "trash", "rubbish", "wood"
+     location    brawler
+     details     "Looking at the broken wood and other rubbish you see a table leg broken into the rough shape of a club. Nothing else looks particularly useful.\n"
+     weight      9999
+
+- scroll
+     description "an unfurled scroll"
+     tags        "scroll", "unfurled scroll"
+     location    store
+     details     "The scroll reads ‘Down the road three goblins strolled, moving on their way. One looked up and said to them ‘Looks like rain today.’ The other looked down and commented ‘The grounds all muddy and gray.’ The last looked forward swiftly said ‘Then quite quickly we should be on our way.’"
+     weight      9999
 
 - intoCave
      condition   { return guard->health == 0 || silver->location == guard; }
