@@ -122,7 +122,7 @@ extern OBJECT objs[];
      details     "The shiny coin seems to be a rare and priceless artefact.\n"
      weight      1
 
-- guard
+- guardX
      description "a burly guard"
      tags        "guard", "burly guard"
      location    field
