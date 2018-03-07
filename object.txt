@@ -96,37 +96,29 @@ extern OBJECT objs[];
      details     "The room glimmers with jewels and fine tapestries of red and violet. Sitting on a gold throne is a goblin wearing a crown and draped in ornate robes. It holds the Goblin Goblet in its hands in front of you.\n"
      capacity    9999
 
-- field
-     description "an open field"
-     tags        "field"
-     details     "The field is a nice and quiet place under a clear blue sky.\n"
-     capacity    9999
-
-- cave
-     description "a little cave"
-     tags        "cave"
-     details     "The cave is just a cold, damp, rocky chamber.\n"
-     capacity    9999
-
-- silver
-     description "a silver coin"
-     tags        "silver", "coin", "silver coin"
-     location    field
-     details     "The coin has an eagle on the obverse.\n"
-     weight      1
-
-- gold
+- coin
      description "a gold coin"
      tags        "gold", "coin", "gold coin"
-     location    openBox
-     details     "The shiny coin seems to be a rare and priceless artefact.\n"
+     location    objectFountain
+     details     "The shiny coin glimmers with a distinct glint.\n"
      weight      1
 
-- guardX
-     description "a burly guard"
-     tags        "guard", "burly guard"
-     location    field
-     details     "The guard is a really big fellow.\n"
+- goblinTraderNoCoin
+     condition   { return coin->location == objectFountain || coin->location == player; }
+     description "Bub the Trader of Shinies"
+     tags        "trader", "goblin trader", "goblin"
+     location    trader
+     details     "The goblin says ‘Oh hello! I am Bub the Trader of Shiny’s. I do so love shiny things, but not all shinies things are equal to me, oh no. If I had to choose to between one shiny and a shinier shiny, I’d take the shinier shiny! Find me shinier shiny and I’ll give you a less shiny shiny.’\n"
+     contents    "He has"
+     health      100
+     capacity    20
+
+- goblinTraderHasCoin
+     condition   { return coin->location != objectFountain && coin->location != player; }
+     description "Bub the Trader of Shinies"
+     tags        "trader", "goblin trader", "goblin"
+     location    trader
+     details     "The goblin say’s ‘Oh yes! This is very shiny shiny! Here, you have have this less shiny shiny in return.’ The Goblin hands you a polished key.\n"
      contents    "He has"
      health      100
      capacity    20
@@ -134,9 +126,67 @@ extern OBJECT objs[];
 - player
      description "yourself"
      tags        "yourself"
-     location    field
+     location    entrance
      details     "You would need a mirror to look at yourself.\n"
      contents    "You have"
+     health      100
+     capacity    20
+
+- goblinBrawlerUndefeated
+     condition { return goblinBrawlerUndefeated->health > 0 }
+     description "Bumpy the Cudgelist"
+     tags        "brawler", "goblin brawler", "goblin"
+     location    brawler
+     details     "The goblin says ‘You can’t get past me Bumpy the Cudgelist! I’ll bump your head if you so nearly try to make your way around.’ It waves its club above its head triumphantly.\n"
+     contents    "He has"
+     health      3
+     capacity    20
+
+- goblinBrawlerDefeated
+     condition { return goblinBrawlerUndefeated->health == 0 }
+     description "Bumpy the Cudgelist"
+     tags        "brawler", "goblin brawler", "goblin"
+     location    brawler
+     details     "The goblin is unconcious and doesn't say anything.\n"
+     contents    "He has"
+     health      100
+     capacity    20
+
+- goblinRiddler
+     description "Lerp the Riddlemaster"
+     tags        "riddler", "goblin riddler", "goblin"
+     location    riddler
+     details     "The goblin says ‘Hmm greetings! I an Lerp the Riddlemaster. I suppose you wish to go through that door over there. Hmm quite, quite. Well, I can open that door for you if you can solve my riddle!’/n ‘I have lots to say but never speak,’/n ‘I open but you cannot walk through me,’/n ‘I have a spine but no bones.’/n ‘What am I?’\n"
+     contents    "He has"
+     health      100
+     capacity    20
+
+- goblinGuardUndefeated
+     condition   { return goblinGuardUndefeated->health > 0 }
+     description "Royal Gobo Guard Frank"
+     tags        "guard", "goblin guard", "goblin"
+     location    guard
+     details     "The goblin does not answer…\n"
+     contents    "He has"
+     health      6
+     capacity    20
+
+- goblinGuardDefeated
+     condition { return goblinGuardDefeated->health == 0 }
+     description "Royal Gobo Guard Frank"
+     tags        "guard", "goblin guard", "goblin"
+     location    guard
+     details     "The goblin is unconcious and does not say anything.\n"
+     contents    "He has"
+     health      100
+     capacity    20
+
+- goblinKing
+     description "King Gobo, Keeper of the Goblin Goblet"
+     tags        "king", "goblin king", "goblin"
+     location    throne
+     details     "You have passed through all of the brave adventurer. Using you might and wit, you found your way through the Goblin Gauntlet! Know you may finally take your prize. I, King Gobo, Keeper of the Goblin Goblet bestow upon you my namesake. The Goblin Goblet is yours!!!\n"
+     contents    "He has"
      health      100
      capacity    20
 
