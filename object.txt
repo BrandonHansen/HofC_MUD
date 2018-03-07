@@ -24,7 +24,7 @@ typedef struct object {
 extern OBJECT objs[];
 
 - entrance
-     description "An entrance"
+     description "an entrance"
      tags        "entrance"
      details     "A weathered stone doorway attached to the cliffside stands to your East, vines crawl across the aged rock and water trickles down the jagged precipice and forms pool at its feet. To your West is the road back to the village, spanning across a lush green field. Birds can be heard chirping in the distance.\n"
      capacity    9999
@@ -39,6 +39,61 @@ extern OBJECT objs[];
      description "a trader"
      tags        "trader"
      details     "The room is small but well lit, a goblin sits at the other end of the room and looks at you curiously. On a tattered mat colored with patterns of red and violet is spread out various items, many with distinct shines and gleams. There is a wooden door to your West and a strange pattern of bricks on the wall to your South\n"
+     capacity    9999
+
+- secret
+     description "a secret"
+     tags        "secret"
+     details     "The room is covered with ornate flowery wallpaper of blues, greens, and gold. A neon sign flashes in yellow on the opposite end of the room, it reads ‘You found the secret!’ There is a wooden door to your North.
+\n"
+     capacity    9999
+
+- pit
+     description "a pit"
+     tags        "pit"
+     details     "The huge room expands out in front of you, in the center a round pit descends into an inky blackness. The pits diameter almost meets the sides of the room itself, but leaves enough space to allow passage around the edges. Sitting on the pits edge is a goblin, its feet dangling over. The goblin doesn’t take any notice of you but instead peers downward with a cheery smile on its face, moving its legs like pendulums. There are wooden doors to your North, East and South.\n"
+     capacity    9999
+
+- brawler
+     description "a brawler"
+     tags        "brawler"
+     details     "The room is very messy, the ground covered with bits of fractured wooden debri and other rubbish. To the East is a wooden door with the large picture of a key carved on it. Standing between you and the door is a goblin, it has wild eyes and brandishes a club. Every move you make it reacts to as to remain between you and the key door. There are wooden doors to your South and East.\n"
+     capacity    9999
+
+- key
+     description "a key room"
+     tags        "key room"
+     details     "The room is small and made of red brick with mortar. On the wall hanging from a rusty coat hook is a single blue key. There is a wooden door to your West.\n"
+     capacity    9999
+
+- riddler
+     description "a riddler"
+     tags        "riddler"
+     details     "The long room is lit with lanterns on either sides of the walls, lavender colored wallpaper peels in flakes onto the floor. On the left side sits a goblin upon a wooden stool with a stack of books to its side. The goblin leafs through leather bound tome absentmindedly, only looking up for a second to acknowledge your presence. There are wooden doors to your East and West.\n"
+     capacity    9999
+
+- gallery
+     description "a gallery"
+     tags        "gallery"
+     details     "The long room stretches to your left and right, rose colored wallpaper peels in flakes onto the floor. Red curtains sway on either corner of the room though they seem to stop moving when you look straight at them. On the edge of the wall are three busts, the first of a goblin with its long nose pointed up, the second with its nose pointing straight ahead, and the third with its nose point down. The busts stand on pedestals and below them are square wooden buttons. There are wooden doors to your West, North, and South.\n"
+     capacity    9999
+
+- store
+     description "a store room"
+     tags        "store"
+     details     "The small room is almost filled to the brim with barrels and crates. A dim lamp on the ceiling only barely makes the room visible. On one of the crates sits an unfurled scroll nailed to the crates frame; it has writing on it. There is a wooden door to your South.\n"
+     capacity    9999
+
+- guard
+     description "a guard"
+     tags        "guard"
+     details     "The room is well lit and covered with ornate silver wallpaper. To your East is a golden door with a cup image engraved on it. Between you and the golden door stands a goblin wearing armor, it holds a steel mace to its side. The goblins eyes are stern and its stance is disciplined. There is a wooden door to your North and a golden door to your East.\n"
+     capacity    9999
+
+- throne
+     description "a throne"
+     tags        "throne"
+     details     "The room glimmers with jewels and fine tapestries of red and violet. Sitting on a gold throne is a goblin wearing a crown and draped in ornate robes. It holds the Goblin Goblet in its hands in front of you.\n"
      capacity    9999
 
 - field
